@@ -148,17 +148,7 @@ int			draw_exit(t_data *param);
 int			draw_player(t_data *param);
 int			draw_foe(t_data *param);
 int			draw_ground(t_data *param, int x, int y);
-void		draw_wall_up_left(t_data *param, int x, int y);
-void		draw_wall_up_right(t_data *param, int x, int y);
-void		draw_wall_down_left(t_data *param, int x, int y);
-void		draw_wall_down_right(t_data *param, int x, int y);
-void		draw_wall_left(t_data *param, int x, int y);
-void		draw_wall_right(t_data *param, int x, int y);
-void		draw_wall_up(t_data *param, int x, int y);
-void		draw_wall_down(t_data *param, int x, int y);
-void		draw_wall_center(t_data *param, int x, int y);
-void		draw_wall_cross(t_data *param, int x, int y);
-void		draw_wall_semi_cross(t_data *param, int x, int y);
+void		draw_wall(t_data *param, int x, int y);
 
 // animate
 

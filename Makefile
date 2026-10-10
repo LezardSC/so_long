@@ -59,7 +59,7 @@ SRC_BONUS			 	= 	main_bonus.c \
 							free_param/free_sprites_player.c free_param/free_sprites_foe.c \
 							draw_map/draw_map_bonus.c \
 							draw_map/draw_ground.c \
-							draw_map/draw_wall.c draw_map/draw_wall_center.c draw_map/draw_wall_corners.c \
+							draw_map/draw_wall.c \
 							draw_map/draw_player.c \
 							draw_map/draw_foe.c \
 							draw_map/put_sprite.c \

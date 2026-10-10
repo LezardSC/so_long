@@ -66,7 +66,7 @@ int	draw_map(t_data *param)
 		while (param->map[y][x])
 		{
 			if (param->map[y][x] == '1')
-				draw_wall_up_left(param, x, y);
+				draw_wall(param, x, y);
 			else
 				draw_ground(param, x, y);
 			x++;
