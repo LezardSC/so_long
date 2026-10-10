@@ -27,6 +27,7 @@ int	game_loop(t_data *param)
 	long long	now;
 	long long	diff_millisecs;
 
+	move_player(param);
 	now = millitimestamp();
 	diff_millisecs = (now - param->last_mtimestamp);
 	if (diff_millisecs > 45)

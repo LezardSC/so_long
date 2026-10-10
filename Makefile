@@ -68,6 +68,7 @@ SRC_BONUS			 	= 	main_bonus.c \
 							move_player/move_player_down.c \
 							move_player/move_player_left.c \
 							move_player/move_player_right.c \
+							move_player/move_player_bonus.c \
 
 
 

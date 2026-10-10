@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 		return (free(param.map_name), free_all_param(&param), free_init(&param),
 			mlx_destroy_display(param.mlx), free(param.mlx), 0);
 	mlx_hook(param.win, 02, 1L << 0, deal_key, &param);
+	mlx_hook(param.win, 03, 1L << 1, deal_key_release, &param);
 	mlx_hook(param.win, 17, 0, close_win, &param);
 	mlx_loop_hook(param.mlx, game_loop, &param);
 	mlx_loop(param.mlx);
