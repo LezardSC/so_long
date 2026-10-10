@@ -81,7 +81,7 @@ GET_NEXT_LINE			= get_next_line.a
 GNL_DIR					= ft_printf/libft/get_next_line/
 	
 GCC						= cc
-CFLAGS					= -Wall -Wextra -Werror -g
+CFLAGS					= -Wall -Wextra -Werror -g -std=gnu17
 
 RM 						= rm -rf
 CLEAR					= clear
