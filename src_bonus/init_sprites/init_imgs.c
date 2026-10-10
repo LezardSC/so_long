@@ -23,25 +23,24 @@ void	*join_path_name(const char *img_path, char *char_n)
 	return (path);
 }
 
-void	**init_imgs(t_data *param, const char *img_path, int nb_imgs, int n)
+t_img	**init_imgs(t_data *param, const char *img_path, int nb_imgs, int n)
 {
-	int		img_width;
-	int		img_height;
 	char	*char_n;
 	char	*path;
-	void	**imgs;
+	t_img	**imgs;
 
-	imgs = malloc(sizeof(void *) * (nb_imgs + 1));
+	imgs = ft_calloc(nb_imgs + 1, sizeof(t_img *));
 	while (n < nb_imgs && imgs != NULL)
 	{
 		char_n = ft_itoa(n);
 		path = join_path_name(img_path, char_n);
 		if (path != NULL)
-			imgs[n] = mlx_xpm_file_to_image(param->mlx,
-					path, &img_width, &img_height);
-		n++;
+			imgs[n] = load_sprite(param, path);
 		free(char_n);
 		free(path);
+		if (imgs[n] == NULL)
+			return (free_imgs(param, imgs), NULL);
+		n++;
 	}
 	return (imgs);
 }

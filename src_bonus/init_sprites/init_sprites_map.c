@@ -23,22 +23,16 @@
 
 int	init_sprites_map(t_data *param)
 {
-	int	img_width;
-	int	img_height;
-
-	param->draw.ground = mlx_xpm_file_to_image(param->mlx,
-			"./graphics/tileset/ground_0.xpm", &img_width, &img_height);
+	param->draw.ground = load_sprite(param, "./graphics/tileset/ground_0.xpm");
 	if (!param->draw.ground)
 		return (1);
 	param->draw.wall_init = init_imgs(param, "./graphics/tileset/wall_", 41, 0);
 	if (!param->draw.wall_init)
 		return (1);
-	param->draw.escape = mlx_xpm_file_to_image(param->mlx,
-			"./graphics/escape/escape.xpm", &img_width, &img_height);
+	param->draw.escape = load_sprite(param, "./graphics/escape/escape.xpm");
 	if (!param->draw.escape)
 		return (1);
-	param->draw.item_0 = mlx_xpm_file_to_image(param->mlx,
-			"./graphics/items/item_0.xpm", &img_width, &img_height);
+	param->draw.item_0 = load_sprite(param, "./graphics/items/item_0.xpm");
 	if (!param->draw.item_0)
 		return (1);
 	return (0);

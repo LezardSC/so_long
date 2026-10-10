@@ -53,7 +53,7 @@ SRC_BONUS			 	= 	main_bonus.c \
 							game_loop.c \
 							show_move.c \
 							init_sprites/init_sprites_bonus.c \
-							init_sprites/init_imgs.c \
+							init_sprites/init_imgs.c init_sprites/sprite_utils.c \
 							init_sprites/init_sprites_map.c init_sprites/init_sprites_player_foe.c \
 							free_param/free_param_bonus.c free_param/free_sprites_map.c \
 							free_param/free_sprites_player.c free_param/free_sprites_foe.c \
@@ -62,6 +62,7 @@ SRC_BONUS			 	= 	main_bonus.c \
 							draw_map/draw_wall.c draw_map/draw_wall_center.c draw_map/draw_wall_corners.c \
 							draw_map/draw_player.c \
 							draw_map/draw_foe.c \
+							draw_map/put_sprite.c \
 							animation/player_idle_animation.c animation/foe_idle_animation.c \
 							move_player/move_player_up.c \
 							move_player/move_player_down.c \

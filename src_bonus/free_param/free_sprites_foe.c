@@ -14,10 +14,5 @@
 
 void	free_sprites_foe(t_data *param)
 {
-	int	i;
-
-	i = -1;
-	while (++i <= 7)
-		mlx_destroy_image(param->mlx, param->draw.foe_idle_front[i]);
-	free(param->draw.foe_idle_front);
+	free_imgs(param, param->draw.foe_idle_front);
 }

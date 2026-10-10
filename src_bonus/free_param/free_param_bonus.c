@@ -41,6 +41,7 @@ int	free_all_param(t_data *param)
 
 int	free_init(t_data *param)
 {
+	destroy_sprite(param, param->draw.frame);
 	free_sprites_map(param);
 	free_sprites_player(param);
 	free_sprites_foe(param);

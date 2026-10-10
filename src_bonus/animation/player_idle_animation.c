@@ -14,7 +14,7 @@
 
 int	player_idle_animation_back(t_data *param, int x, int y)
 {
-	mlx_put_image_to_window(param->mlx, param->win,
+	put_sprite(param,
 		param->draw.player_idle_back[param->player_idle_frame],
 		x * 72, y * 72);
 	return (0);
@@ -22,7 +22,7 @@ int	player_idle_animation_back(t_data *param, int x, int y)
 
 int	player_idle_animation_left(t_data *param, int x, int y)
 {
-	mlx_put_image_to_window(param->mlx, param->win,
+	put_sprite(param,
 		param->draw.player_idle_left[param->player_idle_frame],
 		x * 72, y * 72);
 	return (0);
@@ -30,7 +30,7 @@ int	player_idle_animation_left(t_data *param, int x, int y)
 
 int	player_idle_animation_right(t_data *param, int x, int y)
 {
-	mlx_put_image_to_window(param->mlx, param->win,
+	put_sprite(param,
 		param->draw.player_idle_right[param->player_idle_frame],
 		x * 72, y * 72);
 	return (0);
@@ -38,7 +38,7 @@ int	player_idle_animation_right(t_data *param, int x, int y)
 
 int	player_idle_animation_front(t_data *param, int x, int y)
 {
-	mlx_put_image_to_window(param->mlx, param->win,
+	put_sprite(param,
 		param->draw.player_idle_front[param->player_idle_frame],
 		x * 72, y * 72);
 	return (0);
