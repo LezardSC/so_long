@@ -26,5 +26,6 @@ int	init_param(t_data *param)
 	param->end_game = 0;
 	param->e_x = 0;
 	param->e_y = 0;
+	ft_bzero(&param->draw, sizeof(t_draw));
 	return (0);
 }

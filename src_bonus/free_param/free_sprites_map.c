@@ -14,17 +14,8 @@
 
 void	free_sprites_map(t_data *param)
 {
-	int	i;
-
-	mlx_destroy_image(param->mlx, param->draw.ground);
-	i = 0;
-	while (i <= 40)
-	{
-		if (param->draw.wall_init[i])
-			mlx_destroy_image(param->mlx, param->draw.wall_init[i]);
-		i++;
-	}
-	free(param->draw.wall_init);
-	mlx_destroy_image(param->mlx, param->draw.escape);
-	mlx_destroy_image(param->mlx, param->draw.item_0);
+	destroy_sprite(param, param->draw.ground);
+	free_imgs(param, param->draw.wall_init);
+	destroy_sprite(param, param->draw.escape);
+	destroy_sprite(param, param->draw.item_0);
 }

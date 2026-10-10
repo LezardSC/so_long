@@ -14,7 +14,6 @@
 
 int	draw_ground(t_data *param, int x, int y)
 {
-	mlx_put_image_to_window(param->mlx, param->win,
-		param->draw.ground, x * 72, y * 72);
+	put_sprite(param, param->draw.ground, x * 72, y * 72);
 	return (0);
 }

@@ -14,41 +14,13 @@
 
 void	free_sprites_player_2(t_data *param)
 {
-	int	i;
-
-	i = -1;
-	while (++i <= 3)
-	{
-		if (param->draw.player_idle_left[i])
-			mlx_destroy_image(param->mlx, param->draw.player_idle_left[i]);
-	}
-	free(param->draw.player_idle_left);
-	i = -1;
-	while (++i <= 3)
-	{
-		if (param->draw.player_idle_right[i])
-			mlx_destroy_image(param->mlx, param->draw.player_idle_right[i]);
-	}
-	free(param->draw.player_idle_right);
+	free_imgs(param, param->draw.player_idle_left);
+	free_imgs(param, param->draw.player_idle_right);
 }
 
 void	free_sprites_player(t_data *param)
 {
-	int	i;
-
-	i = -1;
-	while (++i <= 3)
-	{
-		if (param->draw.player_idle_front[i])
-			mlx_destroy_image(param->mlx, param->draw.player_idle_front[i]);
-	}
-	free(param->draw.player_idle_front);
-	i = -1;
-	while (++i <= 3)
-	{
-		if (param->draw.player_idle_back[i])
-			mlx_destroy_image(param->mlx, param->draw.player_idle_back[i]);
-	}
-	free(param->draw.player_idle_back);
+	free_imgs(param, param->draw.player_idle_front);
+	free_imgs(param, param->draw.player_idle_back);
 	free_sprites_player_2(param);
 }

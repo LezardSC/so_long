@@ -24,8 +24,7 @@ int	draw_items(t_data *param)
 		while (param->map[y][x])
 		{
 			if (param->map[y][x] == 'C')
-				mlx_put_image_to_window(param->mlx, param->win,
-					param->draw.item_0, x * 72, y * 72);
+				put_sprite(param, param->draw.item_0, x * 72, y * 72);
 			x++;
 		}
 		x = 0;
@@ -46,8 +45,7 @@ int	draw_exit(t_data *param)
 		while (param->map[y][x])
 		{
 			if (param->map[y][x] == 'E')
-				mlx_put_image_to_window(param->mlx, param->win,
-					param->draw.escape, x * 72, y * 72);
+				put_sprite(param, param->draw.escape, x * 72, y * 72);
 			x++;
 		}
 		x = 0;
@@ -92,5 +90,7 @@ int	draw_all(t_data *param)
 		return (1);
 	if (draw_foe(param) == 1)
 		return (1);
+	mlx_put_image_to_window(param->mlx, param->win,
+		param->draw.frame->img, 0, 0);
 	return (0);
 }

@@ -23,17 +23,29 @@
 # include "../ft_printf/libft/get_next_line/get_next_line.h"
 # include "../mlx/mlx.h"
 
+typedef struct s_img
+{
+	void	*img;
+	char	*addr;
+	int		bpp;
+	int		line_len;
+	int		endian;
+	int		width;
+	int		height;
+}			t_img;
+
 typedef struct s_draw
 {
-	void	*ground;
-	void	*escape;
-	void	*item_0;
-	void	**wall_init;
-	void	**player_idle_front;
-	void	**player_idle_back;
-	void	**player_idle_left;
-	void	**player_idle_right;
-	void	**foe_idle_front;
+	t_img	*frame;
+	t_img	*ground;
+	t_img	*escape;
+	t_img	*item_0;
+	t_img	**wall_init;
+	t_img	**player_idle_front;
+	t_img	**player_idle_back;
+	t_img	**player_idle_left;
+	t_img	**player_idle_right;
+	t_img	**foe_idle_front;
 }			t_draw;
 
 typedef struct s_data
@@ -97,8 +109,12 @@ int			deal_attack(t_data *param);
 
 //initialize sprites
 
-void		**init_imgs(t_data *param,
+t_img		**init_imgs(t_data *param,
 				const char *img_path, int nb_imgs, int n);
+t_img		*load_sprite(t_data *param, char *path);
+t_img		*create_frame(t_data *param, int width, int height);
+void		destroy_sprite(t_data *param, t_img *sprite);
+void		free_imgs(t_data *param, t_img **imgs);
 void		*join_path_name(const char *img_path, char *char_n);
 int			init_sprites_map(t_data *param);
 int			init_sprites_player_foe(t_data *param);
@@ -115,6 +131,7 @@ void		free_sprites_foe(t_data *param);
 // draw
 
 int			draw_all(t_data *param);
+void		put_sprite(t_data *param, t_img *sprite, int x, int y);
 int			draw_map(t_data *param);
 int			draw_player(t_data *param);
 int			draw_items(t_data *param);

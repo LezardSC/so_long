@@ -14,6 +14,10 @@
 
 int	init_sprites(t_data *param)
 {
+	param->draw.frame = create_frame(param,
+			param->max_x * 72, param->max_y * 72);
+	if (!param->draw.frame)
+		return (1);
 	if (init_sprites_map(param) == 1)
 		return (1);
 	if (init_sprites_player_foe(param) == 1)
