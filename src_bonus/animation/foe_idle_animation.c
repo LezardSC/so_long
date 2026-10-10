@@ -14,12 +14,8 @@
 
 int	foe_idle_animation_front(t_data *param, int x, int y)
 {
-	if (param->animation_frame % 10 == 0)
-		param->foe_idle_front_frame++;
 	mlx_put_image_to_window(param->mlx, param->win,
-		param->draw.foe_idle_front[param->foe_idle_front_frame],
+		param->draw.foe_idle_front[param->foe_idle_frame],
 		x * 72, y * 72);
-	if (param->foe_idle_front_frame == 7)
-		param->foe_idle_front_frame = 0;
 	return (0);
 }
