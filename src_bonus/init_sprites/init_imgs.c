@@ -31,7 +31,7 @@ void	**init_imgs(t_data *param, const char *img_path, int nb_imgs, int n)
 	char	*path;
 	void	**imgs;
 
-	imgs = malloc(sizeof(void *) * nb_imgs + 1);
+	imgs = malloc(sizeof(void *) * (nb_imgs + 1));
 	while (n < nb_imgs && imgs != NULL)
 	{
 		char_n = ft_itoa(n);
