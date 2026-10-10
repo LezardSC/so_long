@@ -12,15 +12,6 @@
 
 #include "so_long_bonus.h"
 
-/*
-	The order for the walls is:
-	0 - wall_alone	/	1 - wall_center
-	2 - wall_down	/	3 - wall_downleft
-	4 - wall_downright /5 - wall_left
-	6 - wall_right	/	7 - wall_up
-	8 - wall_upleft	/	8 - wall_upright
-*/
-
 int	init_sprites_map(t_data *param)
 {
 	param->draw.ground = load_sprite(param, "./graphics/tileset/ground_0.xpm");
