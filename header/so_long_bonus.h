@@ -23,6 +23,8 @@
 # include "../ft_printf/libft/get_next_line/get_next_line.h"
 # include "../mlx/mlx.h"
 
+# define MOVE_DELAY 150
+
 typedef struct s_img
 {
 	void	*img;
@@ -73,11 +75,18 @@ typedef struct s_data
 	int			foe_idle_frame;
 	int			player_idle_frame;
 	int			end_game;
+	int			key_up;
+	int			key_down;
+	int			key_left;
+	int			key_right;
+	long long	last_move_mtimestamp;
 	t_draw		draw;
 }			t_data;
 
 int			main(int argc, char **argv);
 int			deal_key(int key, t_data *param);
+int			deal_key_release(int key, t_data *param);
+int			move_player(t_data *param);
 int			close_win(t_data *param);
 int			init_sprites(t_data *param);
 int			map_parsing(t_data *param, int i);

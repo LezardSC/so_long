@@ -6,46 +6,22 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:13:10 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/15 16:52:58 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2026/10/11 12:00:00 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	deal_key_move_front(t_data *param)
+static void	press_direction(t_data *param, int *key, char direction)
 {
-	if (param->player_direction == 'N')
-		move_up(param);
+	*key = 1;
+	if (param->player_direction != direction)
+	{
+		param->player_direction = direction;
+		param->last_move_mtimestamp = millitimestamp();
+	}
 	else
-		param->player_direction = 'N';
-	return (0);
-}
-
-int	deal_key_move_back(t_data *param)
-{
-	if (param->player_direction == 'S')
-		move_down(param);
-	else
-		param->player_direction = 'S';
-	return (0);
-}
-
-int	deal_key_move_left(t_data *param)
-{
-	if (param->player_direction == 'W')
-		move_left(param);
-	else
-		param->player_direction = 'W';
-	return (0);
-}
-
-int	deal_key_move_right(t_data *param)
-{
-	if (param->player_direction == 'E')
-		move_right(param);
-	else
-		param->player_direction = 'E';
-	return (0);
+		move_player(param);
 }
 
 int	deal_key(int key, t_data *param)
@@ -53,18 +29,25 @@ int	deal_key(int key, t_data *param)
 	if (key == 65307)
 		close_win(param);
 	if (key == 119)
-		deal_key_move_front(param);
+		press_direction(param, &param->key_up, 'N');
 	if (key == 97)
-	{
-		deal_key_move_left(param);
-	}
+		press_direction(param, &param->key_left, 'W');
 	if (key == 115)
-	{
-		deal_key_move_back(param);
-	}
+		press_direction(param, &param->key_down, 'S');
 	if (key == 100)
-	{
-		deal_key_move_right(param);
-	}
+		press_direction(param, &param->key_right, 'E');
+	return (0);
+}
+
+int	deal_key_release(int key, t_data *param)
+{
+	if (key == 119)
+		param->key_up = 0;
+	if (key == 97)
+		param->key_left = 0;
+	if (key == 115)
+		param->key_down = 0;
+	if (key == 100)
+		param->key_right = 0;
 	return (0);
 }

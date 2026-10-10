@@ -24,6 +24,11 @@ int	init_param(t_data *param)
 	param->foe_idle_frame = 0;
 	param->player_idle_frame = 0;
 	param->end_game = 0;
+	param->key_up = 0;
+	param->key_down = 0;
+	param->key_left = 0;
+	param->key_right = 0;
+	param->last_move_mtimestamp = 0;
 	param->e_x = 0;
 	param->e_y = 0;
 	ft_bzero(&param->draw, sizeof(t_draw));
