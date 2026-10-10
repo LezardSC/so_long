@@ -21,11 +21,8 @@ int	init_param(t_data *param)
 	param->map_tmp = NULL;
 	param->player_direction = 'S';
 	param->animation_frame = 0;
-	param->foe_idle_front_frame = 0;
-	param->player_idle_front_frame = 0;
-	param->player_idle_back_frame = 0;
-	param->player_idle_left_frame = 0;
-	param->player_idle_right_frame = 0;
+	param->foe_idle_frame = 0;
+	param->player_idle_frame = 0;
 	param->end_game = 0;
 	param->e_x = 0;
 	param->e_y = 0;

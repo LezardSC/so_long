@@ -58,11 +58,8 @@ typedef struct s_data
 	long long	last_mtimestamp;
 	char		player_direction;
 	int			animation_frame;
-	int			foe_idle_front_frame;
-	int			player_idle_front_frame;
-	int			player_idle_back_frame;
-	int			player_idle_left_frame;
-	int			player_idle_right_frame;
+	int			foe_idle_frame;
+	int			player_idle_frame;
 	int			end_game;
 	t_draw		draw;
 }			t_data;

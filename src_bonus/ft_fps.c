@@ -45,7 +45,6 @@ void	ft_fps(t_data *param)
 	if (now > param->last_mtimestamp)
 	{
 		param->fps = 960 / (now - param->last_mtimestamp);
-		param->animation_frame++;
 		param->last_mtimestamp = now;
 	}
 }
